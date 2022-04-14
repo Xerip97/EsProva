@@ -1,0 +1,15 @@
+<form class="form" #f="ngForm" (ngSubmit)="submitForm(f)">
+  <input
+    type="text"
+    name="name"
+    class="form-name"
+    placeholder="Inserire un nome..."
+    required
+    ngModel
+    #nameField="ngModel"
+  />
+  <p *ngIf="nameField.touched && nameField.invalid">
+    <small>Il campo è richiesto</small>
+  </p>
+  <button class="research" type="submit" [disabled]="f.invalid">Ricerca</button>
+</form>
